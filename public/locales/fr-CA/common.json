@@ -1,0 +1,117 @@
+{
+  "en": "Anglais",
+  "fr-CA": "Français (Canadien)",
+  "news": "Nouvelles",
+  "research": "Recherche",
+  "project": "Projet",
+  "people": "Équipe",
+  "course": "Cours",
+  "number": "Numéro",
+  "semesters": "Sessions",
+  "fall": "Automne",
+  "winter": "Hiver",
+  "allPublications": "Toutes les publications",
+  "allProjects": "Tous les projets",
+  "allItems": "Tous les items",
+  "publicationTypes": "Types de publication",
+  "projectTypes": "Types de projets",
+  "researchProjects": "Projets de recherche",
+  "researchArticles": "Articles de recherche",
+  "fundedProjects": "Projets financés",
+  "collaborativeProjects": "Collaborations",
+  "studentLedProjects": "Projets dirigés par des étudiant·e·s",
+  "projectForFun": "Projets _just for fun_",
+  "inProgress": "en cours",
+  "completed": "complété",
+  "blogPosts": "Billets de blog",
+  "name": "Nom",
+  "description": "Description",
+  "role": "Rôle",
+  "focus": "Point focal",
+  "authors": "Auteur·e·s",
+  "year": "Année",
+  "read": "Lire",
+  "readMore": "En savoir plus",
+  "by": "par",
+  "publishedOn": "Publié le",
+  "writtenBy": "Écrit par",
+  "getInTouch": "Contactez-nous!",
+  "contactInformation": "Information de contact",
+  "firstName": "Prénom",
+  "lastName": "Nom",
+  "email": "Courriel",
+  "phone": "Téléphone",
+  "subject": "Sujet",
+  "submit": "Soumettre",
+  "send": "Envoyez",
+  "sending": "En envoi...",
+  "messageSuccess": "Merci ! Votre message a été envoyé.",
+  "messageFailure": "Oups ! Quelque chose s'est mal passé, veuillez réessayer.",
+  "optional": "Facultatif",
+  "characters": "caractères",
+  "siteDescription": "Un centre de recherche basé à l'Université de Montréal",
+  "copyright": "Tous droits réservés",
+  "siteCredit": " Conception et développement par ",
+  "menu": [
+    {
+      "name": "Recherche",
+      "path": "/research",
+      "lang": "fr-CA",
+      "color": "purple"
+    },
+    {
+      "name": "Cours",
+      "path": "/courses",
+      "lang": "fr-CA",
+      "color": "turquoise"
+    },
+    {
+      "name": "Publications",
+      "path": "/publications",
+      "lang": "fr-CA",
+      "color": "orange"
+    },
+    {
+      "name": "Conférences",
+      "path": "/outreach",
+      "lang": "fr-CA",
+      "color": "blue"
+    },
+    {
+      "name": "Actualités",
+      "path": "/news",
+      "lang": "fr-CA",
+      "color": "orange"
+    },
+    {
+      "name": "Données & outils",
+      "path": "/data-and-tools",
+      "lang": "fr-CA",
+      "color": "yellow"
+    },
+    {
+      "name": "Ressources",
+      "path": "/resources",
+      "lang": "fr-CA",
+      "color": "yellow"
+    },
+    {
+      "name": "Équipe",
+      "path": "/people",
+      "lang": "fr-CA",
+      "color": "purple"
+    },
+    {
+      "name": "Contact",
+      "path": "/contact",
+      "lang": "fr-CA",
+      "color": "blue"
+    }
+  ],
+  "publicationTypesArray": [
+    { "name": "Toutes les publications" },
+    { "name": "Articles scientifiques" },
+    { "name": "Actes de conférences" },
+    { "name": "Rapports" }
+  ]
+}

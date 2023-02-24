@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://econcrimelab.com
+
+# Sitemaps
+Sitemap: https://econcrimelab.com/sitemap.xml
