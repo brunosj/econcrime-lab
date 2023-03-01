@@ -55,6 +55,13 @@
   @apply mb-6 text-lg leading-relaxed last:mb-0 lg:text-2xl;
 }
 
+.markdown li {
+  @apply py-1;
+}
+.markdown ul {
+  @apply py-2;
+}
+
 .markdown a {
   @apply underline underline-offset-4 duration-300  hover:text-mgray-600 group-hover:text-mgray-600 dark:hover:text-mgray-700 dark:group-hover:text-mgray-700;
 }

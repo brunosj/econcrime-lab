@@ -9,6 +9,7 @@ import PublicationDetails from './publicationDetails';
 import ButtonIcon from '@/ui/buttonIcon';
 import PageNavigationSection from '@/layout/pageNavigationSection';
 import PageContentSection from '@/layout/pageContentSection';
+import ReactMarkdown from 'react-markdown';
 
 type Publications = {
   publications: PublicationTypes[];
@@ -170,7 +171,11 @@ const PublicationsContent = ({ publications }: Publications) => {
                 </div>
               </div>
               <p className='mt-12 mb-6 text-sm lg:text-base'>
-                {publication.attributes.abstract}
+                <article className='markdown'>
+                  <ReactMarkdown>
+                    {publication.attributes.abstract}
+                  </ReactMarkdown>
+                </article>
               </p>
 
               <ButtonIcon

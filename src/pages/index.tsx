@@ -18,6 +18,9 @@ const Home: NextPage<{
     triggerOnce: true,
   });
 
+  const newsSorted = news.sort((a: NewsTypes, b: NewsTypes) =>
+    a.attributes.date > b.attributes.date ? -1 : 1
+  );
   return (
     <>
       <Seo title='' description={page.attributes.description} />
@@ -30,7 +33,7 @@ const Home: NextPage<{
             />
           </SectionFadeIn>
         </div>
-        <HomeNews news={news.slice(0, 3)} />
+        <HomeNews news={newsSorted.slice(0, 3)} />
       </Layout>
     </>
   );
