@@ -20,6 +20,7 @@
   "fundedProjects": "Projets financés",
   "collaborativeProjects": "Collaborations",
   "studentLedProjects": "Projets dirigés par des étudiant·e·s",
+  "outreach": "Conférences",
   "projectForFun": "Projets _just for fun_",
   "inProgress": "en cours",
   "completed": "complété",
@@ -52,6 +53,7 @@
   "siteDescription": "Un centre de recherche basé à l'Université de Montréal",
   "copyright": "Tous droits réservés",
   "siteCredit": " Conception et développement par ",
+  "404": "Oups ! Cette page ne peut être trouvée.",
   "menu": [
     {
       "name": "Recherche",

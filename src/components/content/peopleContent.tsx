@@ -81,7 +81,9 @@ const PeopleContent = ({ people }: People) => {
                                     key={i}
                                     className=' mb-2 last:mb-0'
                                   >
-                                    {project.attributes.title}
+                                    <li className='list-inside list-disc'>
+                                      {project.attributes.title}
+                                    </li>
                                   </Link>
                                 )
                               )}

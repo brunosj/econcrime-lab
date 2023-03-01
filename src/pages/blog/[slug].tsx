@@ -10,10 +10,11 @@ import { useRouter } from 'next/router';
 import { Seo } from '@/components/seo';
 import { BlogTypes } from '@/types/ResponsesInterface';
 
-const Blog: NextPage<{
+interface BlogPage {
   content: BlogTypes;
   otherLocaleContent: BlogTypes;
-}> = ({ content, otherLocaleContent }) => {
+}
+const Blog: NextPage<BlogPage> = ({ content, otherLocaleContent }) => {
   const { t } = useTranslation();
   const router = useRouter();
   let locale = router.locale;

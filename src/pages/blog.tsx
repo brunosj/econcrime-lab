@@ -13,7 +13,6 @@ const BlogPage: NextPage<{
   blogs: BlogTypes[];
 }> = ({ pages, blogs }) => {
   const [page] = pages.filter((page) => page.attributes.slug === 'blog');
-  console.log(blogs);
   return (
     <Layout>
       <Seo

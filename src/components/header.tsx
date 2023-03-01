@@ -8,9 +8,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Bars4Icon } from '@heroicons/react/24/outline';
 import ThemeSwitch from './ui/ThemeSwitch';
 import Image from 'next/image';
-import clsx from 'clsx';
 import { LogoCoin } from '@/assets/logo';
-import { useTheme } from 'next-themes';
 import { MenuType } from 'src/types/MenuInterface';
 
 const Header = () => {

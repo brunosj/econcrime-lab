@@ -75,7 +75,7 @@ const DataToolsContent = ({ data }: Data) => {
   return (
     <>
       <section className='borderLight w-full table-auto border-t pb-12'>
-        <nav className='borderLight hidden border-b bg-mgray-300 text-xs font-light dark:bg-mblack-700 lg:block lg:text-base'>
+        <nav className='borderLight  border-b bg-mgray-300 text-xs font-light dark:bg-mblack-700 lg:block lg:text-base'>
           <div className='grid grid-cols-2 gap-x-12 gap-y-3 py-6 px-6 lg:px-24'>
             <div className='flex items-center'>
               <div className='accent-myellow-500'>
@@ -137,7 +137,7 @@ const DataToolsContent = ({ data }: Data) => {
                   </h2>
                 </div>
                 <div className='borderLight border-b bg-mgray-500 py-2 dark:bg-mblack-500'>
-                  <h4 className='layout mt-2 font-mono font-light italic'>
+                  <h4 className='layout mt-2 font-mono text-sm font-light italic md:text-base'>
                     {description}
                   </h4>
                 </div>
@@ -147,7 +147,7 @@ const DataToolsContent = ({ data }: Data) => {
                 </div>
                 {resources.map((resource: any, i: number) => (
                   <Link
-                    className='layout borderLight textHover divide lg:resources-center group flex grid-cols-6 flex-col items-center gap-6 border-b py-3  duration-300 hover:bg-mgray-200 hover:dark:bg-mblack-500 lg:grid lg:gap-12'
+                    className='layout borderLight textHover divide group flex grid-cols-6 flex-col gap-6 border-b py-3 duration-300  hover:bg-mgray-200 hover:dark:bg-mblack-500 lg:grid lg:items-center lg:gap-12'
                     href={resource.attributes.url}
                     rel='noopener noreferrer'
                     target='_blank'

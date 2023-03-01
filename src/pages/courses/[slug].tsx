@@ -13,11 +13,16 @@ import { Seo } from '@/components/seo';
 import { CourseTypes } from '@/types/ResponsesInterface';
 import { ProblematicTypes } from '@/types/ResponsesInterface';
 
-const Course: NextPage<{
+interface CoursePage {
   content: CourseTypes;
   otherLocaleContent: CourseTypes;
   problematicsAll: ProblematicTypes[];
-}> = ({ content, otherLocaleContent, problematicsAll }) => {
+}
+const Course: NextPage<CoursePage> = ({
+  content,
+  otherLocaleContent,
+  problematicsAll,
+}) => {
   const { t } = useTranslation();
   const router = useRouter();
   let locale = router.locale;

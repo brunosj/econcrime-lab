@@ -55,20 +55,20 @@ const ResearchContent = ({ researchProjects }: ResearchProjects) => {
               aria-label='all items'
               onClick={() => initialState(researchProjects)}
             >
-              {t('allProjects')}
+              <div className='text-left'>{t('allProjects')}</div>
             </button>
           </div>
           {menuItems.map((type, i) => {
             return (
               <button
-                className='textHover py-3 active:underline'
+                className='textHover flex py-3 active:underline'
                 aria-label='choose category'
                 onClick={() => {
                   clickEvent(type);
                 }}
                 key={i}
               >
-                <div className=''>{type}</div>
+                <div className='text-left'>{type}</div>
               </button>
             );
           })}

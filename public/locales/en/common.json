@@ -20,6 +20,7 @@
   "fundedProjects": "Funded projects",
   "collaborativeProjects": "Collaborations",
   "studentLedProjects": "Student-led projects",
+  "outreach": "Outreach",
   "projectForFun": "Projects for fun",
   "inProgress": "in progress",
   "completed": "completed",
@@ -52,6 +53,7 @@
   "siteDescription": "A research hub based at University of Montreal",
   "copyright": "All rights reserved",
   "siteCredit": "Conception and development by ",
+  "404": "Oups! This page cannot be found.",
   "menu": [
     {
       "name": "Research",

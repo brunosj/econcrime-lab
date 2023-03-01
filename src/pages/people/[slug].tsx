@@ -10,16 +10,28 @@ import { CMS_URL } from '../../lib/constants';
 import Link from 'next/link';
 import PublicationListing from '@/components/content/publicationListing';
 import { Seo } from '@/components/seo';
-import { PeopleTypes } from '@/types/ResponsesInterface';
-import { ResearchTypes } from '@/types/ResponsesInterface';
-import { PublicationTypes } from '@/types/ResponsesInterface';
+import {
+  PeopleTypes,
+  ResearchTypes,
+  PublicationTypes,
+  OutreachTypes,
+} from '@/types/ResponsesInterface';
 
-const Person: NextPage<{
+interface PeoplePage {
   content: PeopleTypes;
   otherLocaleContent: PeopleTypes;
   researchAll: ResearchTypes[];
   publicationsAll: PublicationTypes[];
-}> = ({ content, otherLocaleContent, researchAll, publicationsAll }) => {
+  outreachAll: OutreachTypes[];
+}
+
+const Person: NextPage<PeoplePage> = ({
+  content,
+  otherLocaleContent,
+  researchAll,
+  publicationsAll,
+  outreachAll,
+}) => {
   const { t } = useTranslation();
   const router = useRouter();
   let locale = router.locale;
@@ -41,7 +53,15 @@ const Person: NextPage<{
       )
     )
     .filter((item: PublicationTypes) => item.attributes.locale === locale);
-  console.log(content);
+
+  const personOutreachLocale = outreachAll
+    .filter((item: OutreachTypes) =>
+      item.attributes.people.data.some((person: PeopleTypes) =>
+        person.attributes.slug.includes(personSlug)
+      )
+    )
+    .filter((item: OutreachTypes) => item.attributes.locale === locale);
+
   return (
     <Layout>
       <Seo title={`${currentContent.attributes.name} |`} />
@@ -81,7 +101,7 @@ const Person: NextPage<{
                         <span className='col-span-7 mb-1 text-mpurple-700 dark:text-mpurple-500 lg:col-span-2 lg:mb-0 lg:pt-6'>
                           {t('focus')}
                         </span>
-                        <div className='col-span-7 mb-6 ml-0 lg:col-span-4 lg:mb-3 lg:ml-3 lg:pt-6'>
+                        <div className='col-span-7 mt-1 mb-6 ml-0 lg:col-span-4 lg:mb-3 lg:ml-3 lg:pt-6'>
                           <div>
                             {currentContent.attributes.researchInterests.map(
                               (interest, i) => (
@@ -109,9 +129,39 @@ const Person: NextPage<{
                               <Link
                                 href={`/research#${project.attributes.slug}`}
                                 key={i}
-                                className=' textHover mb-2 last:mb-0'
+                                className=' textHover mb-3 last:mb-0'
                               >
-                                {project.attributes.title}
+                                <li className='list-inside list-disc'>
+                                  {project.attributes.title}
+                                </li>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </>
+                    )}
+
+                    {/* outreach row */}
+
+                    {personOutreachLocale.length >= 1 && (
+                      <>
+                        <span className='col-span-7 mb-1 text-mpurple-700 dark:text-mpurple-500 lg:col-span-2 lg:mb-0 lg:pt-6'>
+                          {t('outreach')}
+                        </span>
+                        <div className='col-span-7 mb-3 ml-0 lg:col-span-5 lg:ml-3 lg:pt-6'>
+                          <div className='flex flex-col'>
+                            {personOutreachLocale.map((outreach, i) => (
+                              <Link
+                                href={`${
+                                  outreach.attributes.urlConference ||
+                                  '/outreach'
+                                }`}
+                                key={i}
+                                className=' textHover mb-3 last:mb-0'
+                              >
+                                <li className='list-inside list-disc'>
+                                  {outreach.attributes.title}
+                                </li>
                               </Link>
                             ))}
                           </div>
@@ -138,12 +188,6 @@ const Person: NextPage<{
                     <div className='relative h-32 w-32 rounded-full  duration-300 lg:h-48 lg:w-48'>
                       <Image
                         src={`${CMS_URL}${currentContent.attributes.photo.data.attributes.url}`}
-                        // srcSet={`
-                        //           ${CMS_URL}${currentContent.attributes.photo.data.attributes.url}?w=400 400w,
-                        //           ${CMS_URL}${currentContent.attributes.photo.data.attributes.url}?w=800 800w,
-                        //           ${CMS_URL}${currentContent.attributes.photo.data.attributes.url}?w=1200 1200w,
-                        //           ${CMS_URL}${currentContent.attributes.photo.data.attributes.url}?w=1600 1600w
-                        //         `}
                         alt={`${CMS_URL}${currentContent.attributes.photo.data.attributes.url}`}
                         className='rounded-full  object-cover'
                         fill
@@ -201,12 +245,19 @@ export async function getStaticProps({
 
   const publicationsAll = await publicationsRes.json();
 
+  const outreachRes = await fetch(
+    `${process.env.STRAPI_PUBLIC_API_URL}outreach-items?locale=all&populate=*`
+  );
+
+  const outreachAll = await outreachRes.json();
+
   return {
     props: {
       content: currentLocaleEntry,
       otherLocaleContent: otherLocaleEntry,
       researchAll: researchAll.data,
       publicationsAll: publicationsAll.data,
+      outreachAll: outreachAll.data,
       ...(await serverSideTranslations(locale ?? 'en')),
     },
     revalidate: 10,

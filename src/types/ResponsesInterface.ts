@@ -67,13 +67,15 @@ export interface OutreachTypes {
     country: string;
     createdAt: string;
     description: string;
+    locale: string;
     localizations: {};
-    people: {};
+    people: {
+      data: [];
+    };
     publishedAt: string;
     title: string;
     type: string;
     updatedAt: string;
-    url: string;
     year: string;
     urlConference: string;
   };
