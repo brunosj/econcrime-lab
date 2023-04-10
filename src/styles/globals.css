@@ -12,11 +12,13 @@
     src: url('./fonts/IBMPlexMono-Regular.ttf');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'sans';
     src: url('./fonts/Inter-VariableFont_slnt_wght.ttf');
+    font-display: swap;
   }
 
   body {

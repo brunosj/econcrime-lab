@@ -20,7 +20,7 @@ const PageNavigationSection = ({
         className
       )}
     >
-      <div className='m-auto mt-12 px-6 lg:px-24 '>
+      <div className='m-auto mt-12 pl-6 pr-6 lg:pl-24 lg:pr-12 '>
         <PageNavigationTitle title={pageNavigationTitle} textColor='' />
         {children}
       </div>

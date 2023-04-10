@@ -92,6 +92,17 @@ export interface PageTypes {
   id: number;
 }
 
+export interface PageExtraTypes {
+  attributes: {
+    slug: string;
+    title: string;
+    content: string;
+    locale: string;
+    description: string;
+  };
+  id: number;
+}
+
 export interface PeopleTypes {
   attributes: {
     email: string;
