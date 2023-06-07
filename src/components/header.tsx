@@ -80,7 +80,7 @@ const Header = () => {
                     leaveFrom='translate-x-0'
                     leaveTo='translate-x-full'
                   >
-                    <Dialog.Panel className='lg;max-w-lg pointer-events-auto w-screen max-w-md xl:max-w-xl'>
+                    <Dialog.Panel className='pointer-events-auto w-screen max-w-md lg:max-w-lg xl:max-w-xl'>
                       <div className='flex h-full flex-col  bg-mgray-300 py-3 shadow-xl dark:bg-mblack-700'>
                         <div className='px-6 lg:px-24'>
                           <div className='flex'>
