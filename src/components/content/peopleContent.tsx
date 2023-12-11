@@ -28,7 +28,7 @@ const PeopleContent = ({ people }: People) => {
                 key={i}
                 href={`/people/${people.attributes.slug}`}
               >
-                <div className='col-span-7  text-mpurple-700  dark:text-mpurple-500'>
+                <div className=' text-mpurple-700  dark:text-mpurple-500'>
                   <p className='mb-0 text-lg lg:mb-3 lg:text-2xl'>
                     {people.attributes.name}
                   </p>

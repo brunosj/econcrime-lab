@@ -1,3 +1,13 @@
+export interface AlumniTypes {
+  attributes: {
+    name: string;
+    workTitle: string;
+    workUrl: string;
+    graduationYear: string;
+  };
+  id: number;
+}
+
 export interface BlogTypes {
   attributes: {
     content: string;
@@ -108,7 +118,7 @@ export interface PeopleTypes {
     email: string;
     linkedIn: string;
     locale: string;
-    name: number;
+    name: string;
     photo: {
       data: {
         attributes: {
