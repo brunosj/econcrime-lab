@@ -19,7 +19,7 @@ const HomeDescription = ({ content }: HomeDescription) => {
             <span className='font-bold  underline '>Crime</span> Lab
           </h1> */}
         <div className='w-72 md:w-96 lg:w-[35rem] xl:w-[50rem] '>
-          {theme === 'light' ? <LogoBlack /> : <LogoWhite />}
+          {theme === 'dark' ? <LogoWhite /> : <LogoBlack />}
         </div>
       </div>
 
