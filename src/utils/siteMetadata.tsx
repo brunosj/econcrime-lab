@@ -7,5 +7,5 @@ export const siteMetadata = {
   siteUrl: `https://econcrimelab.com`,
   cmsUrl: `https://cms.econcrimelab.com/`,
   twitter: `@MasarahClouston`,
-  theme: 'system', // system, dark or light
+  theme: 'dark', // system, dark or light
 };

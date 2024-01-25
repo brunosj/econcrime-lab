@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
 import { BackgroundIllustration } from '@/assets/backgroundIllustration';
 import { useTheme } from 'next-themes';
-import { LogoWhite, LogoBlack } from '@/assets/logo';
+import { LogoWhite, LogoBlack, Logo } from '@/assets/logo';
 
 interface HomeDescription {
   content: string;
@@ -19,7 +20,7 @@ const HomeDescription = ({ content }: HomeDescription) => {
             <span className='font-bold  underline '>Crime</span> Lab
           </h1> */}
         <div className='w-72 md:w-96 lg:w-[35rem] xl:w-[50rem] '>
-          {theme === 'dark' ? <LogoWhite /> : <LogoBlack />}
+          <Logo color={theme === 'light' ? 'black' : 'white'} />
         </div>
       </div>
 

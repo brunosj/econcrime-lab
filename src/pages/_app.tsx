@@ -6,7 +6,11 @@ import { appWithTranslation } from 'next-i18next';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute='class' defaultTheme={siteMetadata.theme}>
+    <ThemeProvider
+      attribute='class'
+      defaultTheme={siteMetadata.theme}
+      enableSystem={true}
+    >
       <Component {...pageProps} />
     </ThemeProvider>
   );
