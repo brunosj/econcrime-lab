@@ -57,7 +57,7 @@ const Course: NextPage<CoursePage> = ({
   const problematicsSorted = problematicsArray.sort((a, b) => {
     const aYearFirst = `${a[0].slice(-4)}${a[0].slice(0, 1)}`;
     const bYearFirst = `${b[0].slice(-4)}${b[0].slice(0, 1)}`;
-    return aYearFirst > bYearFirst ? 1 : -1;
+    return aYearFirst < bYearFirst ? 1 : -1;
   });
 
   return (
@@ -108,8 +108,8 @@ const Course: NextPage<CoursePage> = ({
               <ReactMarkdown>{currentContent.attributes.content}</ReactMarkdown>
             </article>
             <div>
-              {problematicsArray &&
-                problematicsArray.map((problematic, i) => {
+              {problematicsSorted &&
+                problematicsSorted.map((problematic, i) => {
                   const category = problematic[0];
                   const items = problematic.slice(1).flat();
                   return (
