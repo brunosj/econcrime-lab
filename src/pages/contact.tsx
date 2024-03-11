@@ -7,7 +7,7 @@ import PageHeaderTitle from '../components/layout/pageHeaderTitle';
 import PageContentGrid from '../components/layout/pageContentGrid';
 import Layout from '../components/layout';
 import { useTranslation } from 'next-i18next';
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import Markdown from 'react-markdown';
 import { useState } from 'react';
 import { i18n } from 'next-i18next';
 import { FormEvent } from 'react';
@@ -139,7 +139,7 @@ const ContactPage: NextPage<{
                     </h3>
                     <div className='mt-6 max-w-3xl '>
                       <div className='markdown text-sm '>
-                        <ReactMarkdown>{page.attributes.content}</ReactMarkdown>
+                        <Markdown>{page.attributes.content}</Markdown>
                       </div>
                     </div>
                   </div>
