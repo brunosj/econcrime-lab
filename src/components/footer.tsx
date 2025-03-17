@@ -11,7 +11,7 @@ const Footer = () => {
   const { theme } = useTheme();
   const router = useRouter();
   const { t } = useTranslation();
-  const menu: MenuType = t('menu', { returnObjects: true });
+  const menu = t('menu', { returnObjects: true }) as MenuType;
 
   return (
     <footer className='borderLight layout bottom-0 w-full border-t bg-mgray-400 py-6 dark:bg-mblack-600  '>

@@ -16,7 +16,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const { t } = useTranslation();
 
-  const menu: MenuType = t('menu', { returnObjects: true });
+  const menu = t('menu', { returnObjects: true }) as MenuType;
 
   return (
     <header className='borderLight sticky top-0 z-50'>
