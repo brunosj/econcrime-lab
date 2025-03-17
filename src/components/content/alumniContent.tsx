@@ -54,10 +54,9 @@ const AlumniContent = ({ people }: Alumni) => {
                           <Link
                             href={people.attributes.workUrl}
                             target='_blank'
+                            className='textHover col-span-7 mb-3 ml-0 lg:col-span-5 lg:ml-3'
                           >
-                            <span className='textHover col-span-7 mb-3 ml-0 lg:col-span-5 lg:ml-3'>
-                              {people.attributes.workTitle}
-                            </span>
+                            <span>{people.attributes.workTitle}</span>
                           </Link>
                         ) : (
                           <span className='col-span-7 mb-3 ml-0 lg:col-span-5 lg:ml-3'>
