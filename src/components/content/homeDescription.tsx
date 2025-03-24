@@ -9,7 +9,11 @@ interface HomeDescription {
 }
 
 const HomeDescription = ({ content }: HomeDescription) => {
-  const { theme } = useTheme();
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // When mounted on client, now we can show the UI
+  useEffect(() => setMounted(true), []);
 
   return (
     <section>
@@ -20,7 +24,17 @@ const HomeDescription = ({ content }: HomeDescription) => {
             <span className='font-bold  underline '>Crime</span> Lab
           </h1> */}
         <div className='w-72 md:w-96 lg:w-[35rem] xl:w-[50rem] '>
-          <Logo color={theme === 'light' ? 'black' : 'white'} />
+          {mounted ? (
+            <Logo
+              color={
+                theme === 'light' || resolvedTheme === 'light'
+                  ? 'black'
+                  : 'white'
+              }
+            />
+          ) : (
+            <Logo color='white' />
+          )}
         </div>
       </div>
 
